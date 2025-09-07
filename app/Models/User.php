@@ -24,6 +24,9 @@ class User extends Authenticatable
         'password','role'
     ];
 
+    public function karyawan(){
+        return $this->hasOne(Karyawan::class, 'user_id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

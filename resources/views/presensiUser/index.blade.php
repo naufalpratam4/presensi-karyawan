@@ -22,7 +22,7 @@
                             @elseif ($data->check_in && !$data->check_out)
                                 <!-- Sudah check-in, tapi belum check-out -->
                                 <button class="px-4 py-2 bg-red-400 rounded-lg hover:bg-red-500 text-white
-cursor-pointer" type="submit">Keluar</button>
+                                        cursor-pointer" type="submit">Keluar</button>
                             @else
                                 <!-- Sudah check-in dan check-out -->
                                 <span class="px-4 py-2 bg-gray-200 rounded-lg text-gray-700">
@@ -30,8 +30,12 @@ cursor-pointer" type="submit">Keluar</button>
                                 </span>
                             @endif
                         </div>
-                        <div class="text-center my-1">
-                            <button class="px-4 py-2 bg-green-400 text-white rounded-lg hover:bg-green-500 cursor-pointer">Download QR Code anda</button>
+                        <div class="visible-print text-center">
+                            {{-- tombol download --}}
+                            <a href="{{ route('download.qr') }}"
+                                class="inline-block mt-3 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                                Download QR Code
+                            </a>
                         </div>
                     </form>
                     <script>
@@ -110,11 +114,12 @@ cursor-pointer" type="submit">Keluar</button>
                     <div class="flex gap-3">
                         <button class="px-4 py-2 bg-yellow-500 rounded-lg text-white hover:bg-yellow-600">Ajukan
                             Izin</button>
-                            <a href="/riwayat-absen">
-                                <button class="px-4 py-2 bg-blue-500 rounded-lg text-white hover:bg-blue-600 cursor-pointer">Riwayat
-                            Absen</button>
-                            </a>
-                        
+                        <a href="/riwayat-absen">
+                            <button
+                                class="px-4 py-2 bg-blue-500 rounded-lg text-white hover:bg-blue-600 cursor-pointer">Riwayat
+                                Absen</button>
+                        </a>
+
                     </div>
                 </div>
             </div>
